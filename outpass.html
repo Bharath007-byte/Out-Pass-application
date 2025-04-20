@@ -17,7 +17,6 @@
       color: #333;
     }
 
-    /* Full-screen background image */
     .background-img {
       position: fixed;
       top: 0;
@@ -29,7 +28,6 @@
       opacity: 0.9;
     }
 
-    /* Center the form container */
     .form-wrapper {
       height: 100%;
       display: flex;
@@ -117,17 +115,14 @@
 
   <script>
     document.getElementById('outpassForm').addEventListener('submit', function(event) {
-      event.preventDefault(); // Prevent the default form submission
+      event.preventDefault();
 
-      // Collect form data
       const name = document.getElementById('name').value;
       const enrollment = document.getElementById('enrollment').value;
 
-      // Display a confirmation message
       const responseMessage = `Out Pass Request Submitted Successfully!<br>Name: ${name}<br>Enrollment No: ${enrollment}`;
       document.getElementById('responseMessage').innerHTML = responseMessage;
 
-      // Optionally, reset the form
       this.reset();
     });
   </script>
