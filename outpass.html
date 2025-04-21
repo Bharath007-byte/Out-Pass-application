@@ -4,92 +4,46 @@
   <meta charset="UTF-8">
   <title>Out Pass</title>
   <link rel="stylesheet" href="stylesheet1.css">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html, body {
-      height: 100%;
-      font-family: sans-serif;
-    }
-
-    /* Full-screen background image */
-    .background-img {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover;
-      z-index: -1;
-    }
-
-    /* Center the form container */
-    .form-wrapper {
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .container {
-      
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-      text-align: center;
-      width: 300px;
-    }
-
-    .container h4 {
-      margin-bottom: 20px;
-    }
-
-    label {
-      display: block;
-      text-align: left;
-      margin: 10px 0 5px;
-    }
-
-    input {
-      width: 100%;
-      padding: 8px;
-      margin-bottom: 10px;
-    }
-
-    a {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 10px 20px;
-      background-color: #007bff;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 5px;
-    }
-  </style>
+  <link rel="project.html" href="project.html">
+  
+    
 </head>
 <body>
-
-  <img class="background-img" src="outpass1.jpg" alt="Background Image">
+  <img class="background-img" src="outpass2.jpg" alt="Background Image">
 
   <div class="form-wrapper">
     <div class="container">
       <h4>Out Pass Form</h4>
-      <form>
+      <form id="outpassForm">
         <label for="name">Name:</label>
-        <input type="text" id="name" name="name">
+        <input type="text" id="name" name="name" required>
 
         <label for="enrollment">Enrollment No:</label>
-        <input type="text" id="enrollment" name="enrollment">
+        <input type="text" id="enrollment" name="enrollment" required>
 
-        <a href="project.html">Submit</a>
+<a href=" project.html ">Submit</a>
+
       </form>
+      <div id="responseMessage"></div>
     </div>
   </div>
 
+  <script>
+    document.getElementById('outpassForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent the default form submission
+
+      // Collect form data
+      const name = document.getElementById('name').value;
+      const enrollment = document.getElementById('enrollment').value;
+
+      // Display a confirmation message
+      const responseMessage = `Out Pass Request Submitted Successfully!<br>Name: ${name}<br>Enrollment No: ${enrollment}`;
+      document.getElementById('responseMessage').innerHTML = responseMessage;
+
+      // Optionally, reset the form
+      this.reset();
+    });
+  </script>
 </body>
 </html>
-// code completed succesfully
+
