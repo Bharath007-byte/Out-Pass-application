@@ -120,7 +120,8 @@
   </div>
 
   <script>
-    document.getElementById('outpassForm').addEventListener('submit', function(event) {
+    document.getElementById('outpassForm').addEventListener('submit', function(event)
+    {
       event.preventDefault();
 
       const name = document.getElementById('name').value;
@@ -130,7 +131,8 @@
       document.getElementById('responseMessage').innerHTML = responseMessage;
 
       this.reset();
-    });
+    }
+      );
   </script>
 </body>
 </html>
