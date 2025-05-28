@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Outpass Application - Amity University Bangalore</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 40px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background-color: blue;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #0072bc;
+            padding-bottom: 16px;
+        }
+        .header h1 {
+            margin: 0;
+            color: #0072bc;
+        }
+        .header p {
+            margin: 0;
+            font-size: 16px;
+        }
+        .section {
+            margin-top: 30px;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        textarea {
+            resize: vertical;
+        }
+        .btn {
+            display: block;
+            margin: 30px auto 0;
+            background-color: #0072bc;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 16px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #005f99;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>Amity University Bangalore</h1>
+        <p><strong>Outpass Application Form</strong></p>
+    </div>
+
+    <div class="section">
+        <form>
+            <label for="name">Student Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="reg">Registration Number</label>
+            <input type="text" id="reg" name="reg" required>
+
+            <label for="program">Program & Year</label>
+            <input type="text" id="program" name="program" required>
+
+            <label for="reason">Reason for Outpass</label>
+            <textarea id="reason" name="reason" rows="4" required></textarea>
+
+            <label for="from">From Date & Time</label>
+            <input type="datetime-local" id="from" name="from" required>
+
+            <label for="to">To Date & Time</label>
+            <input type="datetime-local" id="to" name="to" required>
+
+            <label for="contact">Emergency Contact Number</label>
+            <input type="tel" id="contact" name="contact" required>
+
+            <button type="submit" class="btn">Submit Application</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
+hello,github
+secont commit 
