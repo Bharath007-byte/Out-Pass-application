@@ -8,39 +8,30 @@
 </head>
 <body>
   <img class="background-img" src="outpass2.jpg" alt="Background Image">
-
   <div class="form-wrapper">
     <div class="container">
       <h4>Out Pass Form</h4>
       <form id="outpassForm">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required>
-
         <label for="enrollment">Enrollment No:</label>
         <input type="text" id="enrollment" name="enrollment" required>
-
 <a href=" project.html ">Submit</a>
-
       </form>
       <div id="responseMessage"></div>
     </div>
   </div>
-
   <script>
     document.getElementById('outpassForm').addEventListener('submit', function(event)
     {
       event.preventDefault();
-
       const name = document.getElementById('name').value;
       const enrollment = document.getElementById('enrollment').value;
-
       const responseMessage = `Out Pass Request Submitted Successfully!<br>Name: ${name}<br>Enrollment No: ${enrollment}`;
       document.getElementById('responseMessage').innerHTML = responseMessage;
-
       this.reset();
     }
       );
   </script>
 </body>
 </html>
-
