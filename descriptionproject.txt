@@ -1,0 +1,3 @@
+this is our group project for SCM project as our team mates we have samriddhi shuklaa,lahari,jaswita,bharath and umer 
+our project is about HOSTEL OUTPASS SYSTEM 
+we provide a registration page for the outpass making the system easy and approachable for students
