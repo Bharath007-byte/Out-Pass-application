@@ -1,0 +1,112 @@
+body {
+  font-family: Arial, sans-serif;
+  background-image: url('../outpass2.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form-wrapper {
+  background: rgba(0, 0, 0, 0.75);
+  padding: 30px 25px;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 0 15px rgba(0,0,0,0.7);
+}
+h4 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: 600;
+  font-size: 28px;
+  letter-spacing: 1.2px;
+}
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  font-size: 16px;
+}
+input[type="text"] {
+  width: 100%;
+  padding: 12px 14px;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  outline: none;
+  box-sizing: border-box;
+}
+input[type="text"]:focus {
+  background-color: #1a1a1a;
+  color: #fff;
+  box-shadow: 0 0 5px #28a745;
+}
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #28a745;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+button:hover {
+  background-color: #218838;
+}
+/* Modal styling */
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 9999; 
+  left: 0;
+  top: 0;
+  width: 100vw; 
+  height: 100vh; 
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  box-sizing: border-box;
+}
+.modal-content {
+  background-color: #fff;
+  color: #222;
+  padding: 25px 30px;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 0 30px rgba(0,0,0,0.3);
+  text-align: center;
+  position: relative;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.close {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  color: #555;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+.close:hover {
+  color: #28a745;
+}
+.modal p {
+  font-size: 18px;
+  line-height: 1.4;
+}

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Online Outpass System</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #333;
+    }
+
+    body {
+      background-image: url('outpass1.jpg'); /* Using the available image */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.92);
+      padding: 35px 45px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      width: 450px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #2c3e50;
+      font-size: 32px;
+      font-weight: 600;
+    }
+
+    label {
+      display: block;
+      margin: 12px 0 6px;
+      font-size: 16px;
+      color: #34495e;
+      font-weight: 500;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 12px;
+      border-radius: 6px;
+      border: 1px solid #bdc3c7;
+      font-size: 15px;
+      background-color: #f9f9f9;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 18px;
+      font-weight: 500;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+    
+    /* Adding styles for different field sections */
+    .form-section {
+      margin-bottom: 15px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #eaeaea;
+    }
+    
+    .form-section:last-child {
+      border-bottom: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Request Outpass</h1>
+    <form action="/submit_outpass" method="POST">
+      <div class="form-section">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="student-id">Student ID:</label>
+        <input type="text" id="student-id" name="id" required>
+      </div>
+
+      <div class="form-section">
+        <label for="reason">Reason of Leave:</label>
+        <select id="reason" name="reason" required>
+          <option value="personal work">Personal Work</option>
+          <option value="visiting parents">Visiting Parents</option>
+          <option value="visiting LG">Visiting LG</option>
+          <option value="medical">Medical</option>
+        </select>
+      </div>
+      <div class="form-section">
+        <label for="leave-date">Date of Leave:</label>
+        <input type="date" id="leave-date" name="leave_date" required>
+        <label for="leave-time">Time of Departure:</label>
+        <input type="time" id="leave-time" name="leave_time" required>
+      </div>
+      <div class="form-section">
+        <label for="arrival-date">Date of Arrival:</label>
+        <input type="date" id="arrival-date" name="arrival_date" required>
+        <label for="arrival-time">Time of Arrival:</label>
+        <input type="time" id="arrival-time" name="arrival_time" required>
+      </div>
+      <div class="form-section">
+        <label for="approval">Approval By:</label>
+        <select id="approval" name="approval" required>
+          <option value="warden">Warden</option>
+          <option value="principal">HOD</option>
+        </select>
+      </div>
+      <button type="submit">Submit Request</button>
+    </form>
+  </div>
+</body>
+</html>

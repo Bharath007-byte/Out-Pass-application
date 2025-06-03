@@ -1,3 +1,20 @@
+<<<<<<< HEAD
 this is our group project for SCM project as our team mates we have samriddhi shuklaa,lahari,jaswita,bharath and umer 
 our project is about HOSTEL OUTPASS SYSTEM 
 we provide a registration page for the outpass making the system easy and approachable for students
+=======
+                      TEAM 16
+
+
+
+
+
+__The members of are SCM OUTPASS HOSTEL REGISTRATION PROJECT
+    are:-
+1)samridhi shukla
+2)lahari
+3)jaswita
+4)umar
+5)bharath
+
+>>>>>>> master

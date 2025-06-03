@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Online Outpass System</title>
+  <style>
+    :root {
+      --bg-light: rgba(255, 255, 255, 0.95);
+      --bg-dark: rgba(34, 34, 34, 0.95);
+      --text-light: #333;
+      --text-dark: #f5f5f5;
+      --primary: #3498db;
+      --primary-dark: #2980b9;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    body {
+      background-image: url('outpass1.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .container {
+      background-color: var(--bg-light);
+      color: var(--text-light);
+      padding: 35px 40px;
+      border-radius: 15px;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
+      width: 100%;
+      max-width: 480px;
+      transition: all 0.3s ease;
+    }
+
+    body.dark-mode .container {
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 30px;
+    }
+
+    label {
+      display: block;
+      margin: 12px 0 6px;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 14px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 15px;
+      background-color: #f8f8f8;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 17px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: var(--primary-dark);
+    }
+
+    .form-section {
+      margin-bottom: 15px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #eaeaea;
+    }
+
+    .form-section:last-child {
+      border-bottom: none;
+    }
+
+    .toggle-mode {
+      text-align: right;
+      margin-bottom: 10px;
+    }
+
+    .toggle-mode button {
+      background: none;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      padding: 5px 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: all 0.3s ease;
+    }
+
+    .toggle-mode button:hover {
+      background-color: var(--primary);
+      color: #fff;
+    }
+
+    @media (max-width: 500px) {
+      .container {
+        padding: 25px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="toggle-mode">
+      <button onclick="toggleMode()">Toggle Dark Mode</button>
+    </div>
+    <h1>Request Outpass</h1>
+    <form action="/submit_outpass" method="POST">
+      <div class="form-section">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="student-id">Student ID:</label>
+        <input type="text" id="student-id" name="id" required>
+      </div>
+
+      <div class="form-section">
+        <label for="reason">Reason of Leave:</label>
+        <select id="reason" name="reason" required>
+          <option value="">--Select Reason--</option>
+          <option value="personal work">Personal Work</option>
+          <option value="visiting parents">Visiting Parents</option>
+          <option value="visiting LG">Visiting LG</option>
+          <option value="medical">Medical</option>
+        </select>
+      </div>
+
+      <div class="form-section">
+        <label for="leave-date">Date of Leave:</label>
+        <input type="date" id="leave-date" name="leave_date" required>
+
+        <label for="leave-time">Time of Departure:</label>
+        <input type="time" id="leave-time" name="leave_time" required>
+      </div>
+
+      <div class="form-section">
+        <label for="arrival-date">Date of Arrival:</label>
+        <input type="date" id="arrival-date" name="arrival_date" required>
+
+        <label for="arrival-time">Time of Arrival:</label>
+        <input type="time" id="arrival-time" name="arrival_time" required>
+      </div>
+
+      <div class="form-section">
+        <label for="approval">Approval By:</label>
+        <select id="approval" name="approval" required>
+          <option value="">--Select Approver--</option>
+          <option value="warden">Warden</option>
+          <option value="principal">HOD</option>
+        </select>
+      </div>
+
+      <button type="submit">Submit Request</button>
+    </form>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+  const form = document.getElementById('outpassForm');
+  const modal = document.getElementById('responseModal');
+  const responseMessage = document.getElementById('responseMessage');
+  const closeBtn = modal.querySelector('.close');
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const name = form.name.value.trim();
+    const enrollment = form.enrollment.value.trim()
+
+    if (name === '' || enrollment === '') {
+      alert('Please fill out all required fields.');
+      return;
+    }
+
+    responseMessage.innerHTML = `
+      <strong>Out Pass Request Submitted Successfully!</strong><br />
+      <br />
+      <strong>Name:</strong> ${name}<br />
+      <strong>Enrollment No:</strong> ${enrollment}
+    `;
+
+    modal.style.display = 'flex';
+
+    form.reset();
+
+    responseMessage.focus();
+  });
+
+  function closeModal() {
+    modal.style.display = 'none';
+    
+    form.querySelector('button[type="submit"]').focus();
+  }
+
+  closeBtn.addEventListener('click', closeModal);
+
+  window.addEventListener('click', function(event) {
+    if (event.target === modal) {
+      closeModal();
+    }
+  });
+
+  window.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape' && modal.style.display === 'flex') {
+      closeModal();
+    }
+  });
+});
+  </script>
+</body>
+</html>
+
