@@ -42,4 +42,10 @@ Purpose: To formally request permission to leave the campus or office for a spec
 Details Included: Applicant’s information, reason for leaving, date and time of exit and return.
 Approval: Usually requires a signature or digital approval from an authorized person (e.g., teacher, manager).
 Usage: Helps maintain security and track individuals leaving temporarily.
+> TEAM MEMBERS DETAILS CONTACT :
+https://github.com/Laharichowdary8/Out-Pass-application
+https://github.com/Bharath007-byte/Team-16---Out-Pass-application
+ https://github.com/Patchipulusujaswitha/Out-Pass-application
+ https://github.com/shaikmuhammedumar2006/Out-Pass-application
+ https://github.com/samriddhiiiiii/Out-Pass-application
                            
